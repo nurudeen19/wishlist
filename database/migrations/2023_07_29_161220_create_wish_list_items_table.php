@@ -20,7 +20,7 @@ return new class extends Migration
             $table->double('price');
             $table->string('shop');
             $table->boolean('is_desired')->default(false);
-            $table->foreignId('wish_list_id')->constrained();
+            $table->foreignId('wish_list_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
