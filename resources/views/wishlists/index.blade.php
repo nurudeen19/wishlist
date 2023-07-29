@@ -283,7 +283,7 @@
                   @enderror
                 </div>
                 <div class="mb-3">
-                  <label for="exampleFormControlInput1" class="form-label">Item Name</label>
+                  <label for="exampleFormControlInput1" class="form-label">Item Description</label>
                   <textarea name="description" class="form-control @error('description') is-invalid @enderror" required name="description"></textarea>
                   @error('description')
                     <span class="invalid-feedback" role="alert">
