@@ -11,13 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('wish_list_items', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('image_url')->nullable();
+            $table->text('description')->nullable();
+            $table->integer('quantity');
+            $table->double('price');
+            $table->string('shop');
+            $table->boolean('is_desired')->default(false);
+            $table->foreignId('wish_list_id')->constrained();
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('wish_list_items');
     }
 };

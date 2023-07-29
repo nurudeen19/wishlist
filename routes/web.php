@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WishListController@index');
+Route::resource('wishlist','WishListController')->only(['store','update','destroy','show']);
+
+Route::resource('wishlist_items','WishlistItemController')->only(['store','update','destroy']);
