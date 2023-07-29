@@ -17,4 +17,5 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-/images/wishlist_items
+/public/images/wishlist_items
+/.phpintel
